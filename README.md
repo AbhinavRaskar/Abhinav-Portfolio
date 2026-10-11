@@ -1,35 +1,112 @@
-# Abhinav Raskar — MERN Portfolio
+# 🚀 Abhinav Raskar — Developer Portfolio
 
-A responsive, animated developer portfolio built with React + Vite, Tailwind CSS, Framer Motion, Express, and MongoDB.
+A personal developer portfolio built using the **MERN stack** to showcase my technical skills, projects, experience, and contact information. The portfolio provides a central place to explore my work and connect with me professionally.
 
-## Requirements
-- Node.js 20 or newer recommended
-- npm
-- MongoDB Atlas account or local MongoDB
+## 🌐 Live Deployment
 
-## 1. Install dependencies
+- **Frontend Deployment (Vercel Dashboard):** [View Vercel Project](https://vercel.com/abhinav-9ae0/abhinav-portfolio)
+- **Backend API (Render):** [View Backend Service](https://abhinav-portfolio-1-fakv.onrender.com)
 
-Open two terminals:
+> **Note:** The Vercel link above opens the deployment dashboard. For visitors, use your public Vercel website URL.
+
+## ✨ Features
+
+- Responsive personal portfolio website
+- Introduction and professional profile
+- Technical skills showcase
+- Projects and project links
+- Education and professional experience
+- Resume access
+- Contact form integrated with the backend API
+- Separate frontend and backend deployments
+
+## 🛠️ Tech Stack
+
+### Frontend
+- React.js
+- Vite
+- JavaScript
+- HTML5
+- CSS3
+- Bootstrap (if used in the project)
+
+### Backend
+- Node.js
+- Express.js
+- REST API
+
+### Database
+- MongoDB
+- MongoDB Atlas
+
+### Deployment
+- Vercel — Frontend
+- Render — Backend API
+- GitHub — Version control and source code
+
+## 📂 Project Structure
+
+```text
+Abhinav-Portfolio/
+├── client/                 # React frontend
+│   ├── public/             # Static assets and resume
+│   ├── src/                # React components and styles
+│   ├── package.json
+│   └── vite.config.js
+├── server/                 # Express backend
+│   ├── routes/             # API routes
+│   ├── server.js           # Backend entry point
+│   └── package.json
+├── .gitignore
+└── README.md
+```
+
+*The structure above is illustrative; adjust it if your repository differs.*
+
+## ⚙️ Run Locally
+
+### Prerequisites
+
+- Node.js and npm
+- MongoDB Atlas account or a local MongoDB instance
+- Git
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/AbhinavRaskar/Abhinav-Portfolio.git
+cd Abhinav-Portfolio
+```
+
+### 2. Set up the frontend
 
 ```bash
 cd client
 npm install
 ```
 
+Create a `.env` file inside the `client` directory:
+
+```env
+VITE_API_URL=http://localhost:5000
+```
+
+Start the frontend development server:
+
+```bash
+npm run dev
+```
+
+### 3. Set up the backend
+
+Open another terminal:
+
 ```bash
 cd server
 npm install
 ```
 
-## 2. Configure environment variables
-
-Copy `client/.env.example` to `client/.env` and edit if your API runs at a different URL:
-
-```env
-VITE_API_URL=http://localhost:5000/api
-```
-
-Copy `server/.env.example` to `server/.env` and set your actual MongoDB connection string and frontend URL:
+Create a `.env` file inside the `server` directory:
 
 ```env
 PORT=5000
@@ -37,65 +114,70 @@ MONGODB_URI=your_mongodb_connection_string
 CLIENT_URL=http://localhost:5173
 ```
 
-Never commit real `.env` files or expose database credentials in frontend variables.
+Replace the MongoDB placeholder with your connection string. **Never commit real credentials or API keys to GitHub.**
 
-## 3. Add your resume
-
-Your supplied resume is included at `client/public/resume.pdf`. Replace it when you update your resume.
-
-## 4. Run locally
-
-Terminal 1:
+Start the backend:
 
 ```bash
-cd server
-npm run dev
+npm start
 ```
 
-Terminal 2:
+The frontend should be available at `http://localhost:5173` and the backend at `http://localhost:5000`, assuming the default Vite and Express ports are configured.
 
-```bash
-cd client
-npm run dev
+## 🚀 Deployment Configuration
+
+### Frontend — Vercel
+
+Configure the Vercel project with:
+
+- **Repository:** `AbhinavRaskar/Abhinav-Portfolio`
+- **Root Directory:** `client`
+- **Build Command:** `npm run build`
+- **Output Directory:** `dist`
+- **Environment Variable:**
+
+```env
+VITE_API_URL=https://abhinav-portfolio-1-fakv.onrender.com
 ```
 
-Open the local URL Vite prints, usually `http://localhost:5173`. API health check: `http://localhost:5000/api/health`.
+Redeploy after changing environment variables.
 
-## 5. Customize content
-- Edit `client/src/data/portfolio.js` to update profile, skills, projects, and education/experience.
-- Verify every repository and demo URL before publishing.
-- Add your real email to `profile.email` if you want it displayed.
-- Replace any unverified internship dates or descriptions with confirmed details.
+### Backend — Render
 
-## 6. Production build
+Configure the Render web service with:
 
-```bash
-cd client
-npm run build
-npm run preview
+- **Repository:** `AbhinavRaskar/Abhinav-Portfolio`
+- **Root Directory:** `server`
+- **Build Command:** `npm install`
+- **Start Command:** `npm start`
+
+Set the following environment variables in Render:
+
+```env
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string
+CLIENT_URL=your_public_vercel_website_url
 ```
 
-## 7. Deployment
-- Frontend: deploy `client` as a Vite project on Vercel. Set `VITE_API_URL` to your deployed API URL.
-- Backend: deploy `server` to Render or another Node host. Set `MONGODB_URI`, `CLIENT_URL` (the deployed frontend origin), and `PORT` if required by the provider.
-- Database: configure MongoDB Atlas network access and a least-privilege database user.
-- Add your actual resume PDF to `client/public` before deployment.
+Use your actual public Vercel website URL for `CLIENT_URL`, not the Vercel dashboard URL.
 
-## Checklist
-- [ ] Resume PDF exists and opens
-- [ ] Confirm all GitHub and live demo URLs
-- [ ] Confirm internship dates and responsibilities
-- [ ] Set `profile.email` if desired
-- [ ] Configure MongoDB and backend environment variables
-- [ ] Test valid and invalid contact form submissions
-- [ ] Check responsive layout at mobile, tablet, and desktop sizes
-- [ ] Test keyboard focus and reduced-motion preference
-- [ ] Run `npm run build` and check browser/server logs
+## 🔒 Security
 
+- Keep `.env` files out of version control.
+- Store database credentials in deployment environment variables.
+- Never expose MongoDB passwords, API keys, or other secrets in source code.
+- Configure CORS to allow only the intended frontend origin.
 
-## Profile photo
-Your uploaded portrait is saved as `client/public/abhinav-raskar.jpg` and displayed in the hero section. To change it, replace that image file while keeping the same filename.
+## 👨‍💻 About Me
 
+I'm **Abhinav Arun Raskar**, a Computer Engineering graduate with an interest in full-stack development and AI-powered applications. I enjoy building practical web applications and learning technologies that solve real-world problems.
 
-## Resume-based profile updates
-Profile data includes the supplied resume's email, CGPA (8.14/10), education dates, Bitmap Technology and Veracity internship details, project descriptions, and NPTEL DBMS Elite certification. Review all details before publishing.
+### Connect With Me
+
+- **GitHub:** [AbhinavRaskar](https://github.com/AbhinavRaskar)
+- **LinkedIn:** [Abhinav Raskar](https://www.linkedin.com/in/abhinavraskar/)
+- **Email:** [abhinavraskar2@gmail.com](mailto:abhinavraskar2@gmail.com)
+
+---
+
+⭐ If you find this project interesting, feel free to explore the repository and connect with me!
