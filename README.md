@@ -4,7 +4,7 @@ A personal developer portfolio built using the **MERN stack** to showcase my tec
 
 ## 🌐 Live Deployment
 
-- **Frontend Deployment (Vercel Dashboard):** [View Vercel Project](https://vercel.com/abhinav-9ae0/abhinav-portfolio)
+- **Frontend Deployment (Vercel Dashboard):** [View Vercel Project](https://abhinav-portfolio-nu-two.vercel.app/)
 - **Backend API (Render):** [View Backend Service](https://abhinav-portfolio-1-fakv.onrender.com)
 
 > **Note:** The Vercel link above opens the deployment dashboard. For visitors, use your public Vercel website URL.
